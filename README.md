@@ -28,7 +28,7 @@ This tool enables users to view trends, calculate technical indicators, and down
 ![RSI Volatility](https://github.com/KIRANRW9/stock-market-dashboard/blob/main/screenshots/rsi_volatility.png)
 
 ### 📋 View Data Table  
-![View Data Table](https://raw.githubusercontent.com/KIRANRW9/stock-market-dashboard/repo-exercise/screenshots/view_data_table.png)
+![View Data Table](https://github.com/KIRANRW9/stock-market-dashboard/blob/main/screenshots/view_data_table.png)
 
 
 ### 📥 Download Cleaned CSV  
