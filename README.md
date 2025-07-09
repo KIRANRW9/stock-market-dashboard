@@ -22,23 +22,22 @@ This tool enables users to view trends, calculate technical indicators, and down
 ## 📸 Sample Screenshots
 
 ### 📊 Main Dashboard  
-<<<<<<< HEAD
-![Main Dashboard](https://github.com/KIRANRW9/stock-market-dashboard/blob/main/screenshots/dashboard.png)
+![Main Dashboard](https://raw.githubusercontent.com/KIRANRW9/stock-market-dashboard/main/screenshots/dashboard.png)
 
 ### 💡 RSI & Volatility  
-![RSI Volatility](https://github.com/KIRANRW9/stock-market-dashboard/blob/main/screenshots/rsi_volatility.png)
+![RSI Volatility](https://raw.githubusercontent.com/KIRANRW9/stock-market-dashboard/main/screenshots/rsi_volatility.png)
 
 ### 📋 View Data Table  
-![View Data Table](https://github.com/KIRANRW9/stock-market-dashboard/blob/main/screenshots/view_data_table.png)
-
+![View Data Table](https://raw.githubusercontent.com/KIRANRW9/stock-market-dashboard/main/screenshots/view_data_table.png)
 
 ### 📥 Download Cleaned CSV  
-![Download CSV](https://github.com/KIRANRW9/stock-market-dashboard/blob/main/TCS_cleaned_stock_data.csv)
+📥 [Download TCS_cleaned_stock_data.csv](https://raw.githubusercontent.com/KIRANRW9/stock-market-dashboard/main/TCS_cleaned_stock_data.csv)
 
+---
 
 ## 📁 Downloadable File
 
-- `cleaned_stock_data.csv`: Cleaned and preprocessed stock market dataset ready for download via the dashboard.
+- `TCS_cleaned_stock_data.csv`: Cleaned and preprocessed stock market dataset ready for download via the dashboard.
 
 ## 🏁 How to Run
 
