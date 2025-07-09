@@ -22,7 +22,7 @@ This tool enables users to view trends, calculate technical indicators, and down
 ## 📸 Sample Screenshots
 
 ### 📊 Main Dashboard  
-![Main Dashboard](https://raw.githubusercontent.com/KIRANRW9/stock-market-dashboard/repo-exercise/screenshots/dashboard.png)
+![Main Dashboard](https://github.com/KIRANRW9/stock-market-dashboard/blob/main/screenshots/dashboard.png)
 
 ### 💡 RSI & Volatility  
 ![RSI Volatility](https://raw.githubusercontent.com/KIRANRW9/stock-market-dashboard/repo-exercise/screenshots/rsi_volatility.png)
