@@ -33,20 +33,8 @@ This tool enables users to view trends, calculate technical indicators, and down
 
 
 ### 📥 Download Cleaned CSV  
-![Download CSV](https://raw.githubusercontent.com/KIRANRW9/stock-market-dashboard/repo-exercise/screenshots/download_cleaned_csv.png)
+![Download CSV](https://github.com/KIRANRW9/stock-market-dashboard/blob/main/TCS_cleaned_stock_data.csv)
 
-=======
-![Main Dashboard](screenshots/main_dashboard.png)
-
-### 💡 RSI & Volatility  
-![RSI Volatility](screenshots/rsi_volatility_chart.png)
-
-### 📋 View Data Table  
-![View Data Table](screenshots/view_data_table.png)
-
-### 📥 Download Cleaned CSV  
-![Download CSV](screenshots/download_cleaned_csv.png)
->>>>>>> b4b3f37 (Added README, requirements, and cleaned stock data)
 
 ## 📁 Downloadable File
 
