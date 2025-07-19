@@ -1,7 +1,6 @@
-streamlit==1.45.1
+streamlit
+yfinance
+nsetools
+matplotlib
 pandas
 numpy
-plotly
-matplotlib
-yfinance
-ta
