@@ -5,7 +5,6 @@ import yfinance as yf
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
-from nsetools import Nse
 
 # 🎨 Page config
 st.set_page_config(layout="wide", page_title="📊 NSE Stock Market Dashboard")
@@ -17,16 +16,18 @@ st.markdown("Visualize stock trends, technical indicators, and download data")
 # 📌 Sidebar Inputs
 st.sidebar.header("🛠 Configuration")
 
-# Get NSE stock symbols dynamically
-nse = Nse()
-stock_codes = nse.get_stock_codes()
-stock_codes.pop('SYMBOL', None)  # Remove header row if exists
+# ✅ Load NSE symbols dynamically from GitHub (no local CSV needed)
+@st.cache_data
+def load_nse_symbols():
+    url = "https://raw.githubusercontent.com/datasets/nse-stocks/master/data/nse-listed.csv"
+    df = pd.read_csv(url)
+    df['Yahoo Symbol'] = df['Symbol'] + ".NS"
+    return dict(zip(df['Company Name'], df['Yahoo Symbol']))
 
-company_names = list(stock_codes.keys())
-default_company = "TCS" if "TCS" in company_names else company_names[0]
+stock_dict = load_nse_symbols()
 
 selected_companies = st.sidebar.multiselect(
-    "Select NSE Stock(s)", company_names, default=[default_company]
+    "Select NSE Stock(s)", list(stock_dict.keys()), default=["TATA CONSULTANCY SERVICES LTD."]
 )
 
 start_date = st.sidebar.date_input("Start Date", pd.to_datetime("2020-01-01"))
@@ -40,7 +41,7 @@ show_vol = st.sidebar.checkbox("Show Volatility", value=False)
 
 # 📈 Main Analysis
 for company in selected_companies:
-    ticker = f"{company}.NS"
+    ticker = stock_dict[company]
     st.subheader(f"📊 {company} ({ticker})")
 
     try:
@@ -73,7 +74,7 @@ for company in selected_companies:
         # 📊 Charts
         if show_close or show_ma or show_bbands:
             fig, ax = plt.subplots(figsize=(10, 4))
-            ax.plot(data['Date'], data['Close'], label='Close Price', alpha=0.5)
+            ax.plot(data['Date'], data['Close'], label='Close Price', alpha=0.6)
             if show_ma:
                 ax.plot(data['Date'], data['SMA_30'], label='SMA 30', color='green')
                 ax.plot(data['Date'], data['SMA_100'], label='SMA 100', color='orange')
@@ -101,7 +102,7 @@ for company in selected_companies:
             ax3.grid(True)
             st.pyplot(fig3)
 
-        # 📦 Download section
+        # 📥 Download section
         st.download_button(
             label="📥 Download Cleaned CSV",
             data=data.to_csv(index=False).encode('utf-8'),
@@ -114,4 +115,4 @@ for company in selected_companies:
             st.dataframe(data.tail(10))
 
     except Exception as e:
-        st.error(f"❌ Failed to fetch data for {company}: {str(e)}")
+        st.error(f"❌ Error for {company}: {str(e)}")
